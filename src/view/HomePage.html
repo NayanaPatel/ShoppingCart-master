@@ -1,0 +1,45 @@
+<div class="row hero" ng-show="HomeModel.data.selectedProd!=null" >
+    <div class="col-md-3 parent" >
+        <div class=" center-hero"   >
+            <img  ng-src="{{HomeModel.data.selectedProd.imageUrls.lg}}" ></img>
+        </div>
+    </div>
+    <div class="col-md-6" >
+        <div class="hero-desc"  >
+                {{HomeModel.data.selectedProd.description}}
+        </div>
+        <div class="hero-bullets" >
+            <ul>
+                <li ng-repeat="bullets in HomeModel.data.selectedProd.marketingBullets | limitTo:3"  >
+                     {{bullets}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-3" >
+        <div class="hero-price"  >
+                ${{HomeModel.data.selectedProd.pricing.price.was}}
+        </div>
+        <div class="hero-add-cart"  >
+                <input type="button" class="btn btn-success hero-add-cart-btn" value="ADD TO CART"  ng-click="HomeModel.showPrice()"   /> 
+        </div>
+    </div>
+</div>
+<div class="row" >
+    <div class="col-md-3 " ng-repeat="product in HomeModel.data.products.productList"  ng-mouseover="HomeModel.changeHoverProd($index)" >
+        <div style="border:1px solid #cacaca;margin-bottom:20px;padding:10px;" >
+            <div class="center"   >
+            <img ng-repeat="(key, value) in product.imageUrls" ng-src="{{value}}"  class="{{'visible-'+key}}"  ng-if="key!='xl'"   ></img>
+            </div>
+            <div class="center-desc"   >
+                {{HomeModel.manipulateDesc(product.description)}}
+            </div>
+            <div class="center-price"   >
+                ${{product.pricing.price.was}}
+            </div>
+            <div  >
+                <input type="button"  class="btn btn-default btn-view-more" value="VIEW MORE"   /> 
+            </div>
+        </div>   
+    </div>
+</div>

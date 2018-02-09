@@ -1,0 +1,21 @@
+{
+  "name": "shoppingcart",
+  "version": "1.0.0",
+  "description": "Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-route": "^1.6.6",
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.4",
+    "request": "^2.81.0"
+  }
+}
